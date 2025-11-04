@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/submit-order" method="POST">
+<div class="select-group">
+<p>MEMBER NUMBER</p>
+<input type="text" name="memnum">
+
+
+<p>COFFEE ☕ </p>
+
+<select name="coffee" required>
+<option value="" disabled selected>Select coffee type</option>
+<option value="Cappuccino">Cappuccino</option>
+<option value="Flat White">Flat White</option>
+<option value="Latte">Latte</option>
+<option value="Long Black">Long Black</option>
+<option value="Mocha">Mocha</option>
+<option value="Espresso">Espresso</option>
+</select>
+
+<p>MILK 🥛 </p>
+    <select name="milk" required>
+      <option value="" disabled selected>Select milk type</option>
+      <option value="Full Cream">Full Cream</option>
+      <option value="Skim">Skim</option>
+      <option value="Oat">Oat</option>
+      <option value="Soy">Soy</option>
+      <option value="Almond">Almond</option>
+    </select>
+    
+<p>SIZE </p>
+<input type="radio" id="L" name="size" value="Large"> 
+<label for="size">Large</label>
+<input type="radio" id="R" name="size" value="Regular">
+<label for="size">Regular</label>
+
+
+<br></br>
+
+
+
+<textarea id="notes" name="notes" rows="8" cols="60" placeholder="notes..."></textarea>
+
+<br><br>
+<button type="submit">ORDER</button>
+
+</div>
+</form>
+{% endblock content %}

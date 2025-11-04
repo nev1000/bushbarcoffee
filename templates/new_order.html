@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+    integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <ul id="orders" style="list-style-type: none; padding: 0; margin: 0;"></ul>
+   <script type="text/javascript">
+var socket = io();
+
+socket.on('new order', function(order) {
+    const li = document.createElement('li');
+
+    const mainText = document.createElement('span');
+    mainText.textContent = `${order.size} ${order.type} with ${order.milk} milk`;
+    li.appendChild(mainText);
+
+    if (order.notes && order.notes.trim() !== "") {
+        const notesDiv = document.createElement('div');
+        notesDiv.textContent = `Notes: ${order.notes}`;
+        li.appendChild(notesDiv);
+    }
+
+    const made_button = document.createElement('button');
+    made_button.innerText = 'Done';
+    made_button.classList.add('made-btn');
+    li.appendChild(made_button);
+
+   
+    document.getElementById('orders').appendChild(li);
+});
+</script>
+    
+</body>
+</html>

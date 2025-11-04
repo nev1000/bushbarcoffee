@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+    integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <ul id="orders" style="list-style-type: none; padding: 0; margin: 0;"></ul>
+    <script type="text/javascript" charset="utf-8">
+    var socket = io();
+    socket.on('new order', function(order) {
+        const li = document.createElement('li');
+        const made_button = document.createElement('button');
+
+        made_button.innerText = 'DONE';
+        li.innerText = `${order.memnum} : ${order.size} ${order.type} with ${order.milk} milk (${order.notes}) `;
+        document.getElementById('orders').appendChild(li);
+        li.appendChild(made_button);
+
+        made_button.addEventListener('click', function(){
+            li.remove();
+        });
+        
+    });
+    </script>
+
+    
+
+    
+</body>
+</html>

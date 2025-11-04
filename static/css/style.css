@@ -1,0 +1,16 @@
+.select-group {
+    display: block;
+    gap: 10px;
+    align-items: center;
+
+}
+
+
+body {
+   font-family: "Comic Sans MS", cursive, sans-serif;
+   background-color: #4CAF50
+}
+
+button {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
