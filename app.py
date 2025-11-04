@@ -12,20 +12,20 @@ socketio = SocketIO(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
-
-
-@app.route("/qr")
-def qr():
     url = "http://localhost:5000/"
-
     qr_img = qrcode.make(url)
-
     buf = io.BytesIO()
     qr_img.save(buf, format='PNG')
     buf.seek(0)
 
     return send_file(buf, mimetype='image/png')
+    
+
+
+@app.route("/order")
+def order():
+    return render_template("index.html")
+ 
     
 
 @app.route("/submit-order", methods=['POST'])
