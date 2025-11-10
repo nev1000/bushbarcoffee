@@ -2,3 +2,4 @@
 # Add your dependencies below
 Flask
 gunicorn
+Flask-SocketIO==5.3.6
