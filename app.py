@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, send_file
 from flask_socketio import SocketIO
-import qrcode
-import io
+# import qrcode
+# import io
 
 
 orders = []
@@ -12,13 +12,13 @@ socketio = SocketIO(app)
 
 @app.route("/")
 def index():
-    url = "http://localhost:5000/"
-    qr_img = qrcode.make(url)
-    buf = io.BytesIO()
-    qr_img.save(buf, format='PNG')
-    buf.seek(0)
+    # url = "http://localhost:5000/"
+    # qr_img = qrcode.make(url)
+    # buf = io.BytesIO()
+    # qr_img.save(buf, format='PNG')
+    # buf.seek(0)
 
-    return send_file(buf, mimetype='image/png')
+    return render_template("index.html")
     
 
 
