@@ -1,5 +1,4 @@
 Flask==3.1.2
 Flask-SocketIO==5.3.6
 gunicorn==23.0.0
-eventlet==0.35.2
 qrcode==7.4.2
