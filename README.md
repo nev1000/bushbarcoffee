@@ -1,6 +1,6 @@
 # bushbarcoffee
 
-A simple Flask web application for managing orders at a halfway house for a golf course.
+A simple Flask web application for managing orders at the halfway house of a golf course.
 
 
 ## Project Structure
