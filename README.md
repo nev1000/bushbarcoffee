@@ -1,12 +1,7 @@
-# newgolf
+# bushbarcoffee
 
-A simple Flask web application for managing orders at Bush Bar Coffee.
+A simple Flask web application for managing orders at a halfway house for a golf course.
 
-## Features
-- Place new orders
-- View all orders
-- Thank you page after order submission
-- Static CSS styling
 
 ## Project Structure
 ```
