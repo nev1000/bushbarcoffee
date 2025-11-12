@@ -31,7 +31,4 @@ templates/            # HTML templates
    ```bash
    flask run
    ```
-   Or for production:
-   ```bash
-   gunicorn app:app
-   ```
+ 
