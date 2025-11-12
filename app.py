@@ -3,9 +3,6 @@ from flask_socketio import SocketIO
 # import qrcode
 # import io
 
-
-orders = []
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
@@ -17,16 +14,13 @@ def index():
     # buf = io.BytesIO()
     # qr_img.save(buf, format='PNG')
     # buf.seek(0)
-
     return render_template("index.html")
     
-
 
 @app.route("/order")
 def order():
     return render_template("index.html")
  
-    
 
 @app.route("/submit-order", methods=['POST'])
 def submit():

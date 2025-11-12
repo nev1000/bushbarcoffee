@@ -15,7 +15,6 @@ var socket = io();
 
 socket.on('new order', function(order) {
     const li = document.createElement('li');
-
     const mainText = document.createElement('span');
     mainText.textContent = `${order.size} ${order.type} with ${order.milk} milk`;
     li.appendChild(mainText);
