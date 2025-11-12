@@ -35,6 +35,3 @@ templates/            # HTML templates
    ```bash
    gunicorn app:app
    ```
-
-## License
-MIT
